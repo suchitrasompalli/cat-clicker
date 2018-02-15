@@ -1,5 +1,6 @@
-ud989-cat-clicker-ko-starter
-============================
+### Cat Clicker
 
-ud989-cat-clicker-ko-starter
-# cat-clicker
+Click on cats to see the name, click count and nicknames.
+Uses knockout.js javascript library. 
+
+### Open index.html in browser.

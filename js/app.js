@@ -4,6 +4,7 @@ var ViewModel = function() {
 	self.name = ko.observable("Reily");
 	self.imgSrc = ko.observable("img/1413379559_412a540d29_z.jpg");
 	self.imgAttribution = ko.observable("");
+	self.nickNames = ko.observableArray(["pink", "fat cat", "bot", "blackie"]);
 
 	self.level = ko.computed(function() {
 		
