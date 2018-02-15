@@ -1,12 +1,13 @@
-var ViewModel = function() {
+var Cat = function(data) {
 	var self = this;
-	self.clickCount = ko.observable(0);
-	self.name = ko.observable("Reily");
-	self.imgSrc = ko.observable("img/1413379559_412a540d29_z.jpg");
-	self.imgAttribution = ko.observable("");
-	self.nickNames = ko.observableArray(["pink", "fat cat", "bot", "blackie"]);
+	this.clickCount = ko.observable(data.clickCount);
+	this.name = ko.observable(data.name);
+	this.imgSrc = ko.observable(data.imgSrc);
+	this.imgAttribution = ko.observable(data.imgAttribution);
+	this.nickNames = ko.observableArray(data.nickNames);
 
-	self.level = ko.computed(function() {
+
+	this.level = ko.computed(function() {
 		
 		if (self.clickCount() <= 10) {
 			return "NewBorn";
@@ -18,10 +19,19 @@ var ViewModel = function() {
 			return "Adult";
 		}
 	});
-	
+}
+var ViewModel = function() {
+	var self = this;
+	this.currentCat = ko.observable(new Cat({
+		name: "Reily",
+		clickCount : 0,
+		imgSrc : "img/1413379559_412a540d29_z.jpg",
+		imgAttribution: "",
+		nickNames: ["pink", "fat cat", "bot", "blackie"]
+	}));
 
-	self.incrementCounter = function() {
-		self.clickCount(self.clickCount() + 1);
+	this.incrementCounter = function() {
+		self.currentCat.clickCount(self.currentCat.clickCount() + 1);
 	};
 	
 };
