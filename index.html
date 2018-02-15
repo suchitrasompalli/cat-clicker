@@ -5,12 +5,17 @@
     <title>Cat Clicker</title>
 </head>
 <body>
-    <ul id="cat-list"></ul>
+    <div>
+        <ul data-bind="foreach: catList">
+            <li><button data-bind="text: $data.name, click: $parent.setCat"></button></li>
+        </ul>
+    </div>
     <div data-bind="with: currentCat">
+
         <input data-bind="value: name"></input>
         <div data-bind="text: level"></div>
         <div data-bind="text: clickCount"></div>
-        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <img alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
 
         <div>
             <h3>NickNames</h3>
